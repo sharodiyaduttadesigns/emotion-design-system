@@ -1,0 +1,33 @@
+.download-button__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent-border, rgba(170,59,255,0.5));
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent) 100%);
+  color: var(--bg, #fff);
+  font-family: var(--sans, system-ui, sans-serif);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+}
+
+.download-button__btn:focus {
+  outline: 3px solid var(--accent-bg, rgba(170,59,255,0.12));
+  outline-offset: 2px;
+}
+
+.download-button__btn:hover {
+  transform: translateY(-1px);
+}
+
+.download-button__label {
+  line-height: 1;
+}
+
+.download-button__icon svg {
+  display: block;
+  color: inherit;
+}
