@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import DownloadButton from './components/atoms/DownloadButton'
-import Badge from './components/atoms/Badge'
+import Badge from './components/atoms/badge'
 import Avatar from './components/atoms/Avatar'
 import Alert from './components/atoms/Alert'
 

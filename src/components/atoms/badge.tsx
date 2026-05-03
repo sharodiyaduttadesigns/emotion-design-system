@@ -1,5 +1,4 @@
-import React from 'react'
-import './Badge.css'
+import './badge.css'
 
 type BadgeVariant = 'default' | 'success' | 'warning' | 'error'
 
