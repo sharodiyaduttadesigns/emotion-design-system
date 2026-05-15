@@ -8,26 +8,29 @@ export default function Layout() {
     <div className="app-container">
       <header className="app-header">
         <div className="header-content">
-          <div className="header-nav">
-            <NavLink to="/" end className="header-title">
-              Emotion Design System
+          <NavLink to="/" end className="header-title">
+            Emotion Design System
+          </NavLink>
+          <nav className="nav-links">
+            <NavLink
+              to="/components"
+              className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+            >
+              Components
             </NavLink>
-            <nav className="nav-links">
-              <NavLink
-                to="/"
-                end
-                className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
-              >
-                Home
-              </NavLink>
-              <NavLink
-                to="/components"
-                className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
-              >
-                Components
-              </NavLink>
-            </nav>
-          </div>
+            <NavLink
+              to="/documentation"
+              className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+            >
+              Documentation
+            </NavLink>
+            <NavLink
+              to="/releases"
+              className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+            >
+              Releases
+            </NavLink>
+          </nav>
           <button
             className="theme-toggle"
             onClick={toggleTheme}
