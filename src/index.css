@@ -1,15 +1,30 @@
+/* ─── Light (default) ───────────────────────────────────────────────────────── */
 :root {
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
+  --card-bg: #fafaf9;
   --accent: #aa3bff;
   --accent-bg: rgba(170, 59, 255, 0.1);
   --accent-border: rgba(170, 59, 255, 0.5);
   --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  /* Semantic state colors */
+  --c-success-bg:     rgba(34, 197, 94, 0.1);
+  --c-success-border: rgba(34, 197, 94, 0.45);
+  --c-success-fg:     #15803d;
+  --c-warning-bg:     rgba(234, 179, 8, 0.1);
+  --c-warning-border: rgba(234, 179, 8, 0.45);
+  --c-warning-fg:     #b45309;
+  --c-error-bg:       rgba(239, 68, 68, 0.1);
+  --c-error-border:   rgba(239, 68, 68, 0.45);
+  --c-error-fg:       #dc2626;
+  --c-info-bg:        rgba(99, 102, 241, 0.08);
+  --c-info-border:    rgba(99, 102, 241, 0.4);
+  --c-info-fg:        #4f46e5;
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -17,7 +32,7 @@
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
-  color-scheme: light dark;
+  color-scheme: light;
   color: var(--text);
   background: var(--bg);
   font-synthesis: none;
@@ -25,31 +40,72 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  @media (max-width: 1024px) { font-size: 16px; }
 }
 
+/* ─── Dark — system preference (unless manually overridden to light) ─────────── */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --text: #9ca3af;
     --text-h: #f3f4f6;
     --bg: #16171d;
     --border: #2e303a;
     --code-bg: #1f2028;
+    --card-bg: #1c1d25;
     --accent: #c084fc;
     --accent-bg: rgba(192, 132, 252, 0.15);
     --accent-border: rgba(192, 132, 252, 0.5);
     --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+    --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
+    --c-success-bg:     rgba(34, 197, 94, 0.12);
+    --c-success-border: rgba(34, 197, 94, 0.35);
+    --c-success-fg:     #4ade80;
+    --c-warning-bg:     rgba(234, 179, 8, 0.12);
+    --c-warning-border: rgba(234, 179, 8, 0.35);
+    --c-warning-fg:     #fbbf24;
+    --c-error-bg:       rgba(239, 68, 68, 0.12);
+    --c-error-border:   rgba(239, 68, 68, 0.35);
+    --c-error-fg:       #f87171;
+    --c-info-bg:        rgba(99, 102, 241, 0.12);
+    --c-info-border:    rgba(99, 102, 241, 0.35);
+    --c-info-fg:        #818cf8;
+
+    color-scheme: dark;
   }
 }
 
+/* ─── Dark — manual override ─────────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --text: #9ca3af;
+  --text-h: #f3f4f6;
+  --bg: #16171d;
+  --border: #2e303a;
+  --code-bg: #1f2028;
+  --card-bg: #1c1d25;
+  --accent: #c084fc;
+  --accent-bg: rgba(192, 132, 252, 0.15);
+  --accent-border: rgba(192, 132, 252, 0.5);
+  --social-bg: rgba(47, 48, 58, 0.5);
+  --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+
+  --c-success-bg:     rgba(34, 197, 94, 0.12);
+  --c-success-border: rgba(34, 197, 94, 0.35);
+  --c-success-fg:     #4ade80;
+  --c-warning-bg:     rgba(234, 179, 8, 0.12);
+  --c-warning-border: rgba(234, 179, 8, 0.35);
+  --c-warning-fg:     #fbbf24;
+  --c-error-bg:       rgba(239, 68, 68, 0.12);
+  --c-error-border:   rgba(239, 68, 68, 0.35);
+  --c-error-fg:       #f87171;
+  --c-info-bg:        rgba(99, 102, 241, 0.12);
+  --c-info-border:    rgba(99, 102, 241, 0.35);
+  --c-info-fg:        #818cf8;
+
+  color-scheme: dark;
+}
+
+/* ─── Base ───────────────────────────────────────────────────────────────────── */
 #root {
   width: 100%;
   height: 100vh;
@@ -60,12 +116,9 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-}
+body { margin: 0; }
 
-h1,
-h2 {
+h1, h2 {
   font-family: var(--heading);
   font-weight: 500;
   color: var(--text-h);
@@ -75,26 +128,20 @@ h1 {
   font-size: 56px;
   letter-spacing: -1.68px;
   margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
+  @media (max-width: 1024px) { font-size: 36px; margin: 20px 0; }
 }
+
 h2 {
   font-size: 24px;
   line-height: 118%;
   letter-spacing: -0.24px;
   margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+  @media (max-width: 1024px) { font-size: 20px; }
 }
 
-code,
-.counter {
+p { margin: 0; }
+
+code, .counter {
   font-family: var(--mono);
   display: inline-flex;
   border-radius: 4px;
